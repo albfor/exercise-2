@@ -3,7 +3,7 @@
 ## Walkthrough
 
 1. Make a dir, **exercise-2**, and open it in vscode.
-```
+```shell
 mkdir exercise-2 && code exercise-2
 ```
 2. Open the terminal of vscode and create a repository and run **git status** and **git log**
