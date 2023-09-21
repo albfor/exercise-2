@@ -111,6 +111,7 @@ int main(void)
 ```shell
 git status
 ```
+![git status](git-status.png)
 ```shell
 git add .
 ```
