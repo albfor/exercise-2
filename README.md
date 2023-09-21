@@ -132,3 +132,67 @@ git commit --amend -m "Created main.c & run.sh"
 ```shell
 git notes add -m "The program and its compilation"
 ```
+21. Create a **branch**, *feature-branch*, based on the *master* branch.
+```shell
+git branch feature-branch
+```
+22. Create another **branch**, *print-1-6-1*, based on the *master* branch.
+```shell
+git branch print-1-6-1
+```
+23. Get the list of branches using **git branch**
+```shell 
+git branch
+```
+24. **Rename** *feature-branch*  to **print-1-3-1**
+```shell
+git branch feature-branch -m print-1-3-1
+```
+25. Get the list of branches using **git branch**
+```shell 
+git branch
+```
+26. **Switch** to **print-1-3-1** branch and run **git log --oneline**
+```shell
+git switch print-1-3-1
+```
+```shell
+git log --oneline
+```
+27. In **main.c** make a program using a **for loop** to **print from 1 to 3** to the output.
+
+open main.c with a text editor and change the content to:
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	for (int i = 1; i < 4; i++)
+	{
+		printf("%d ", i);
+	}
+	printf("\n");
+
+	return 0;
+}
+```
+28. Run **sh run.sh** in the **terminal** to make sure the program works.
+```shell
+sh run.sh
+```
+should print ```1 2 3 ``` to the console.
+
+29. Run **git status** and **add** the changes to the staging area.
+```shell
+git status
+```
+```shell 
+git add .
+```
+30. **Commit** the changes with the message "**print from 1 to 3**". Run **git log --oneline**.
+```shell
+git commit -m "print from 1 to 3"
+```
+```shell
+git log --oneline
+```
