@@ -63,15 +63,17 @@ git restore README.md
 11. Instead of all **.txt** files, ignore all files without **.c, .md** or **.sh** extensions.
 
 Open your .gitignore file with a text editor and change the content to 
+```
+# Ignores every file
+*
 
-> \*
->
-> !\*.c
->
-> !\*.sh
->
-> !\*.md
-
+# Excludes every file with the .c extensions from the ignore
+!*.c
+# Excludes every file with the .sh extensions from the ignore
+!*.sh
+# Excludes every file with the .md extensions from the ignore
+!*.md
+```
 12. Run **git status** and add **.gitignore** 
 ```
 git status && git add .gitignore
