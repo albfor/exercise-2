@@ -278,3 +278,11 @@ sh run.sh
 git commit -a -m "print from 12 to 1" && git log --oneline
 ```
 40. **Revert** the last commit with the message "**Revert print from 12 to 1**". Run **git log --oneline**
+```shell
+git revert HEAD
+```
+And change the message to *Revert "print from 12 to 1"*
+
+```shell
+git log --oneline
+```
