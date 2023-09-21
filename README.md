@@ -98,6 +98,15 @@ printf "clear && gcc main.c -o main && ./main" > run.sh
 ```
 printf "#include <stdio.h>\n\nint main(void) \n{\n\treturn 0;\n}" > main.c
 ```
+Alternatively, open main.c with a text editor and type the following:
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	return 0;
+}
+```
 16. Run **git status** and add changes to staging area.
 ```
 git status
