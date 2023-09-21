@@ -286,3 +286,35 @@ And change the message to *Revert "print from 12 to 1"*
 ```shell
 git log --oneline
 ```
+41. Then **hard reset** the branch to the commit with the message "**print from 2 to 1**"
+```shell
+git reset --hard <commit-id>
+```
+42. **Merge** *print-1-3-1* with *master* with the message "**print from 1 to 3 to 1**"
+
+First switch to the branch you want the other branch to merge into (master in our case)
+```shell
+git switch master 
+```
+Either run 
+```shell
+git merge --squash print-1-3-1 && git commit -m "print from 1 to 3 to 1"
+```
+Or 
+```shell 
+git merge print-1-3-1
+```
+The squash command will result in the output they asked for. The regular 
+merge will lead to the same log as the one they had in the exercise.
+
+43. Run **git log --oneline**. Delete branch *print-1-3-1* and run **git branch**.
+```shell 
+git log --oneline
+```
+```shell 
+git branch -D print-1-3-1
+```
+```shell 
+git branch
+```
+
