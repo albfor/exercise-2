@@ -186,7 +186,7 @@ should print ```1 2 3 ``` to the console.
 ```shell
 git status
 ```
-```shell 
+```shell
 git add .
 ```
 30. **Commit** the changes with the message "**print from 1 to 3**". Run **git log --oneline**.
@@ -196,3 +196,82 @@ git commit -m "print from 1 to 3"
 ```shell
 git log --oneline
 ```
+31. Now **switch** to *master* and run **git log --oneline**
+```shell
+git switch master
+```
+```shell
+git log --oneline
+```
+32. What is the **difference** between *master* and *print-1-3-1*?
+
+`git diff <branch-name>` will print out all the differences between our 
+current branch and <branch-name>.
+```shell
+git diff print-1-3-1
+```
+33. **Switch** to *print-1-3-1* and run **git status**
+```shell
+git switch print-1-3-1 && git status
+```
+34. In **main.c** make a **for loop** after the previous loop to **print from 2 to 1** to the output
+
+open main.c with a text editor and change the content to:
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	for (int i = 1; i < 4; i++)
+	{
+		printf("%d ", i);
+	}
+
+	for (int i = 2; i > 0; i--)
+	{
+		printf("%d ", i);
+	}
+	printf("\n");
+
+	return 0;
+}
+```
+35. Run **sh run.sh** in the **terminal** to make sure it runs.
+```shell
+sh run.sh
+```
+36. **Commit** the changes with the message "**print from 2 to 1**" and run **git log --oneline**
+```shell
+git commit -m "print from 2 to 1" && git log --oneline
+```
+37. In the last loop change your code in order to print from **12 to 1**.
+
+open main.c with a text editor and change the content to:
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	for (int i = 1; i < 4; i++)
+	{
+		printf("%d ", i);
+	}
+
+	for (int i = 12; i > 0; i--)
+	{
+		printf("%d ", i);
+	}
+	printf("\n");
+
+	return 0;
+}
+```
+38. Run **sh run.sh** in the **terminal** to make sure the program works.
+```shell
+sh run.sh
+```
+39. **Commit** the changes with the message "**print from 12 to 1**" and run **git log --oneline**
+```shell
+git commit -m "print from 12 to 1" && git log --oneline
+```
+40. **Revert** the last commit with the message "**Revert print from 12 to 1**". Run **git log --oneline**
