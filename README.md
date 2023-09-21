@@ -64,10 +64,13 @@ git restore README.md
 
 Open your .gitignore file with a text editor and change the content to 
 
-> *
-> !*.c
-> !*.sh
-> !*.md
+> \*
+>
+> !\*.c
+>
+> !\*.sh
+>
+> !\*.md
 
 12. Run **git status** and add **.gitignore** 
 ```
