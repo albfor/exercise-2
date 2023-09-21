@@ -317,4 +317,20 @@ git branch -D print-1-3-1
 ```shell 
 git branch
 ```
+44. **Switch** to *print-1-6-1* and run **git log --oneline**
+```shell
+git switch print-1-6-1 && git log --oneline
+```
+45. use **git cherry-pick** and add the commit with message "**print from 12 to 1**"
 
+I could not remember what the commit id was so 
+```shell
+git reflog | grep "print from 12 to 1"
+```
+should return something like 
+
+![reflog](reflog.png)
+
+```shell
+git cherry-pick <commit-id>
+```
