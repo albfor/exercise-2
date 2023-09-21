@@ -74,6 +74,10 @@ Open your .gitignore file with a text editor and change the content to
 # Excludes every file with the .md extensions from the ignore
 !*.md
 ```
+or if you want to use printf 
+```
+printf '*\n!*.c\n!*.md\n!*.sh' > .gitignore
+```
 12. Run **git status** and add **.gitignore** 
 ```
 git status && git add .gitignore
