@@ -125,6 +125,8 @@ sh run.sh
 ```
 The executable file should be ignored by git
 
+![main is ignored](gitignore.png)
+
 19. Run **git log**. Change the message of the last commit to "**Created main.c and run.sh**
 ```shell
 git commit --amend -m "Created main.c & run.sh"
