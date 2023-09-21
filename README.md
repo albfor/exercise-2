@@ -245,7 +245,7 @@ sh run.sh
 ```
 36. **Commit** the changes with the message "**print from 2 to 1**" and run **git log --oneline**
 ```shell
-git commit -m "print from 2 to 1" && git log --oneline
+git commit -a -m "print from 2 to 1" && git log --oneline
 ```
 37. In the last loop change your code in order to print from **12 to 1**.
 
