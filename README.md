@@ -525,7 +525,7 @@ git log
 git log --oneline
 ```
 ```shell
-git tag -af v1.0 -m "The first release"
+git tag -f v1.0 -m "The first release"
 ```
 60. Run **git tag** and **git tag -n** to show the tag and then
 **delete** the tag.
