@@ -334,3 +334,203 @@ should return something like
 ```shell
 git cherry-pick <commit-id>
 ```
+46. Is there is a conflict? Solve it such that the program counts from 1 to
+and then 5 to 1.
+
+I had a conflict.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+<<<<<< HEAD
+======
+	for (int i = 1; i < 4; i++)
+	{
+		printf("%d", i);
+	}
+
+	for (int i = 12; i > 0; i--)
+	{
+		printf("%d", i);
+	}
+	printf("\n");
+
+>>>>>> <commit id> (print from 12 to 1)
+	return 0;
+}
+```
+Accept incoming change & modify code.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	for (int i = 1; i < 7; i++)
+	{
+		printf("%d", i);
+	}
+
+	for (int i = 5; i > 0; i--)
+	{
+		printf("%d", i);
+	}
+	printf("\n");
+
+	return 0;
+}
+```
+47. Run **git status** and **add** the changes to the staging area.
+```shell
+git status
+```
+```shell
+git add .
+```
+48. **Commit** changes with the message "**print from 1 to 6 to 1**"
+```shell
+git cherry-pick --continue
+```
+Change the message to "**print from 1 to 6 to 1**".
+You could also use a regular `git commit -m "print from 1 to 6 to 1"`
+49. Add a comment, "**//print from 1 to 6 to the output**",
+to the first loop in main.c
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	//print from 1 to 6 to the output
+	for (int i = 1; i < 7; i++)
+	{
+		printf("%d", i);
+	}
+
+	for (int i = 5; i > 0; i--)
+	{
+		printf("%d", i);
+	}
+	printf("\n");
+
+	return 0;
+}
+```
+50. Add a comment, "**//print from 5 to 1 to the output**",
+to the second loop in main.c
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	//print from 1 to 6 to the output
+	for (int i = 1; i < 7; i++)
+	{
+		printf("%d", i);
+	}
+
+	//print from 5 to 1 to the output
+	for (int i = 5; i > 0; i--)
+	{
+		printf("%d", i);
+	}
+	printf("\n");
+
+	return 0;
+}
+```
+51. **Try** to switch to master. Is it possible? Use **git stash** 
+to save the changes and then switch to master.
+```shell
+git switch master
+```
+Switching is not possible since we have uncommited changes 
+in our repo.
+```shell
+git stash
+```
+```shell
+git switch master
+```
+52. Run **git log --oneline** and then **switch to *print-1-6-1*
+```shell
+git log --oneline && git switch print-1-6-1
+```
+53. Use **git stash list** to get the list of stashes.
+Then restore the stash using **git stash pop**
+```shell
+git stash list
+```
+```shell
+git stash pop
+```
+54. **Add** the changes to the staging area and then commit them with the 
+message "**Commented the code**".
+```shell
+git add .
+```
+```shell
+git commit -m "Commented the code"
+```
+55. **Merge** *print-1-6-1* into *master* with the message 
+"**count and print 1-6-1**"
+```shell
+git switch master
+```
+```shell
+git merge print-1-6-1
+```
+56. Is there a conflict? solve it and use **git merge --continue**
+to complete the merge. Run **git log --oneline**
+
+There should be a conflict. If you open main.c with vscode 
+you should be able to click "**Accept Incoming Changes**"
+to solve the conflict.
+
+```shell
+git merge --continue
+```
+```shell
+git log --oneline
+```
+57. **Delete** *print-1-6-1* and run **git branch** and 
+**git log --decorate --graph --oneline**
+
+```shell
+git branch -D print-1-6-1
+```
+```shell
+git branch
+```
+```shell
+git log --decorate --graph --oneline
+```
+58. Add a tag, v1.0, to the last commit and run **git tag**
+```shell
+git tag v1.0
+```
+```shell
+git tag
+```
+59. Run **git log**, **git log --oneline** and then add a message, 
+*The first release*, to the tag.
+```shell
+git log
+```
+```shell
+git log --oneline
+```
+```shell
+git tag -af v1.0 -m "The first release"
+```
+60. Run **git tag** and **git tag -n** to show the tag and then
+**delete** the tag.
+```shell
+git tag
+```
+```shell
+git tag -n
+```
+```shell
+git tag -d v1.0
+```
+
