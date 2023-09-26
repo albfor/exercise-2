@@ -334,6 +334,10 @@ should return something like
 ```shell
 git cherry-pick <commit-id>
 ```
+The following combines all steps above
+```shell
+git cherry-pick $(git reflog | grep "commit: print from 12 to 1" | awk '{print $1}')
+```
 46. Is there is a conflict? Solve it such that the program counts from 1 to
 and then 5 to 1.
 
@@ -393,6 +397,7 @@ git cherry-pick --continue
 ```
 Change the message to "**print from 1 to 6 to 1**".
 You could also use a regular `git commit -m "print from 1 to 6 to 1"`
+
 49. Add a comment, "**//print from 1 to 6 to the output**",
 to the first loop in main.c
 ```c
